@@ -29,4 +29,7 @@ if file is not None:
     if user_question:
         match=vector_store.similarity_search(user_question)
         st.write(match)
-        chain=load_qa_chain(chain_type="stuff")
+        llm= ChatOpenAI(openai_api_key=OPENAI_API_KEY,temperature=0,max_tokens=1000,model_name='gpt-3.5-turbo')
+        chain=load_qa_chain(llm,chain_type="stuff")
+        response=chain.run(input_documents=match,question=user_question)
+        st.write(response)
