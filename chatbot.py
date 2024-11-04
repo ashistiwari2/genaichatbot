@@ -14,7 +14,7 @@ with st.sidebar:
 if file is not None:
     st.success('File uploaded successfully')
     pdf_reader=PdfReader(file)
-    st.write(pdf_reader)
+    #st.write(pdf_reader)
     text=""
     for page in pdf_reader.pages:
         text+=page.extract_text()
