@@ -6,6 +6,7 @@ from langchain_community.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain_community.chat_models import ChatOpenAI
 OPENAI_API_KEY='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'
+OPENAI_API_KEY=st.secret['OPENAI_API_KEY']
 st.header('First Chatbot')
 with st.sidebar:
     st.title('Your Document')
